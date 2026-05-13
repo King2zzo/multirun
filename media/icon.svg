@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="18" fill="#1e1e2e"/>
+  <!-- Three horizontal lines (representing multiple configs) -->
+  <rect x="14" y="26" width="100" height="10" rx="5" fill="#cdd6f4"/>
+  <rect x="14" y="59" width="65" height="10" rx="5" fill="#cdd6f4"/>
+  <rect x="14" y="92" width="78" height="10" rx="5" fill="#cdd6f4"/>
+  <!-- Play button triangle on the right -->
+  <polygon points="88,46 118,64 88,82" fill="#a6e3a1"/>
+</svg>

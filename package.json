@@ -3,11 +3,18 @@
   "displayName": "Multirun",
   "description": "Run multiple VS Code launch configurations with a single click",
   "version": "0.1.0",
-  "publisher": "local",
+  "publisher": "King2zzo",
+  "license": "MIT",
+  "icon": "media/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/King2zzo/multirun"
+  },
+  "keywords": ["multirun", "launch", "debug", "multi", "run", "group"],
   "engines": {
     "vscode": "^1.80.0"
   },
-  "categories": ["Other"],
+  "categories": ["Debuggers", "Other"],
   "activationEvents": ["onStartupFinished"],
   "main": "./out/extension.js",
   "contributes": {
