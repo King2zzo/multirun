@@ -1,0 +1,126 @@
+{
+  "name": "multirun",
+  "displayName": "Multirun",
+  "description": "Run multiple VS Code launch configurations with a single click",
+  "version": "0.1.0",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "multirun",
+          "title": "Multirun",
+          "icon": "media/multirun.svg"
+        }
+      ]
+    },
+    "views": {
+      "multirun": [
+        {
+          "id": "multirunView",
+          "name": "Groups"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "multirunView",
+        "contents": "No groups configured yet.\n[Open Configuration UI](command:multirun.openUI)\n\nOr manually create a multirun.json:\n[Edit multirun.json](command:multirun.editConfig)"
+      }
+    ],
+    "commands": [
+      {
+        "command": "multirun.refresh",
+        "title": "Refresh",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "multirun.runGroup",
+        "title": "Run Group",
+        "icon": "$(play)"
+      },
+      {
+        "command": "multirun.stopGroup",
+        "title": "Stop Group",
+        "icon": "$(debug-stop)"
+      },
+      {
+        "command": "multirun.editConfig",
+        "title": "Multirun: Edit Configuration",
+        "icon": "$(edit)"
+      },
+      {
+        "command": "multirun.openUI",
+        "title": "Multirun: Open Configuration UI",
+        "icon": "$(settings-gear)"
+      },
+      {
+        "command": "multirun.runEntry",
+        "title": "Run",
+        "icon": "$(play)"
+      },
+      {
+        "command": "multirun.stopEntry",
+        "title": "Stop",
+        "icon": "$(debug-stop)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "multirun.refresh",
+          "when": "view == multirunView",
+          "group": "navigation"
+        },
+        {
+          "command": "multirun.editConfig",
+          "when": "view == multirunView",
+          "group": "navigation"
+        },
+        {
+          "command": "multirun.openUI",
+          "when": "view == multirunView",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "multirun.runGroup",
+          "when": "view == multirunView && viewItem == group",
+          "group": "inline@1"
+        },
+        {
+          "command": "multirun.stopGroup",
+          "when": "view == multirunView && viewItem == group",
+          "group": "inline@2"
+        },
+        {
+          "command": "multirun.runEntry",
+          "when": "view == multirunView && viewItem == config",
+          "group": "inline@1"
+        },
+        {
+          "command": "multirun.stopEntry",
+          "when": "view == multirunView && viewItem == config",
+          "group": "inline@2"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
