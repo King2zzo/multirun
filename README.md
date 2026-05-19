@@ -1,8 +1,8 @@
-# Multirun
+# Multirun - VS Code Extension for Multiple Debug Configurations
 
-A VS Code extension that lets you **group and launch multiple debug configurations and terminal scripts simultaneously** — with a single click from the Activity Bar.
+Multirun is a Visual Studio Code extension that lets you run multiple launch configurations, debug sessions, and terminal scripts together from one Activity Bar panel.
 
-Stop juggling tabs and manually starting services one by one. Define your groups once in a simple JSON file and run everything in parallel or in sequence whenever you need it.
+Useful for full-stack projects, microservices, backend/frontend setups, and complex debugging workflows.
 
 ---
 
